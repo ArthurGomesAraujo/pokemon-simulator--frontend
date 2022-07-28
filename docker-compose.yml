@@ -1,0 +1,12 @@
+version: "3.8"
+
+services: 
+  pokemon-frontend-container:
+    container_name: pokemon-frontend-container
+    build: ./
+    working_dir: /usr/src/pokemon-simulator
+    command: serve -s build
+    ports:
+      - "3000:3000"
+    environment: 
+      BACKEND_HOST: "http://localhost:5000"

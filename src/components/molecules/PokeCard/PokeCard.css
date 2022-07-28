@@ -1,0 +1,119 @@
+.card {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  border-radius: 500px;
+  text-align: center;
+  background-color: black;
+  color: white;
+  margin: 10px;
+  background-size: cover;
+  padding-top: 10px;
+  font-family: "Courier New", Courier, monospace;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+p {
+  margin: 0 auto;
+  text-align: center;
+  width: fit-content;
+  background-color: black;
+}
+
+.poke-image {
+  margin: 30px auto;
+}
+
+@keyframes pokeball {
+  25% {
+    border: 1px solid black;
+    border-left: 1px solid red;
+    border-right: 1px solid white;
+  }
+  50% {
+    border: 1px solid black;
+    border-bottom: 1px solid white;
+    border-top: 1px solid red;
+  }
+  75% {
+    border: 1px solid black;
+    border-left: 1px solid white;
+    border-right: 1px solid red;
+  }
+  100% {
+    border: 1px solid black;
+    border-bottom: 1px solid red;
+    border-top: 1px solid white;
+  }
+}
+
+.card:hover {
+  animation-duration: 0.25s;
+  animation-name: pokeball;
+  animation-iteration-count: infinite;
+}
+
+.bg-water {
+  background-image: url("../../../backgrounds/water-bg.jpeg");
+}
+
+.bg-grass {
+  background-image: url("../../../backgrounds/grass-bg.png");
+}
+
+.bg-fire {
+  background-image: url("../../../backgrounds/volcano-bg.jpeg");
+}
+
+.bg-insect {
+  background-image: url("../../../backgrounds/insect-bg.png");
+}
+
+.bg-normal {
+  background-image: url("../../../backgrounds/normal-bg.jpg");
+}
+
+.bg-flying {
+  background-image: url("../../../backgrounds/sky-bg.jpeg");
+}
+
+.bg-dragon {
+  background-image: url("../../../backgrounds/dragon-bg.jpeg");
+}
+
+.bg-eletric {
+  background-image: url("../../../backgrounds/eletric-bg.png");
+}
+
+.bg-fairy {
+  background-image: url("../../../backgrounds/fairy-bg.jpg");
+}
+
+.bg-fight {
+  background-image: url("../../../backgrounds/fight-bg.jpg");
+}
+
+.bg-ghost {
+  background-image: url("../../../backgrounds/ghost-bg.jpg");
+}
+
+.bg-ground {
+  background-image: url("../../../backgrounds/ground-bg.jpg");
+}
+
+.bg-ice {
+  background-image: url("../../../backgrounds/ice-bg.png");
+}
+
+.bg-psychic {
+  background-image: url("../../../backgrounds/psychic-bg.jpeg");
+}
+
+.bg-rock {
+  background-image: url("../../../backgrounds/rock-bg.jpg");
+}
+
+.bg-poison {
+  background-image: url("../../../backgrounds/poison-bg.jpg");
+}
