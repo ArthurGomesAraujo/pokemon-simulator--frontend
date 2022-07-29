@@ -3,6 +3,6 @@ export const pokeURL = {
 };
 
 export const baseApi = {
-    baseUrl: process.env.BACKEND_HOST,
+    baseUrl: process.env.REACT_APP_BACKEND_HOST,
     api: '/api/pokemon/team'
 }

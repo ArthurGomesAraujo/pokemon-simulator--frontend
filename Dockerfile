@@ -1,9 +1,9 @@
 FROM node:buster
 
-WORKDIR /usr/src/pokemon-simulator/build
+COPY ./build /usr/src/pokemon-simulator/build
 
-COPY ./build ./
+WORKDIR /usr/src/pokemon-simulator/
 
 RUN npm install -g serve
 
-CMD ["/bin/bash"]
+ENTRYPOINT ["serve", "-s", "build"]
