@@ -21,8 +21,6 @@ const HomePage = () => {
   const [route, setRoute] = useState('home');
   const [editId, setEditId] = useState('');
 
-  console.log(process.env.REACT_APP_BACKEND_HOST);
-
   useEffect(() => {
     if (isLocalStorageNull()) {
       console.log("Fetching from api");
