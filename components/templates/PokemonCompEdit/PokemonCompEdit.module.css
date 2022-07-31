@@ -1,0 +1,51 @@
+.containerList {
+    
+    max-width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.containerMiddleSection {
+    margin: 0 auto;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+}
+
+.inputFilter {
+    margin: 50px;
+    width: 400px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    transition: 0.2s ease-in-out;
+    font-size: 20px;
+}
+
+.inputFilter:focus {
+    background-color: white;
+    color:black
+}
+
+.chosenPokemons {
+    margin: 60px;
+    display: flex;
+    flex-direction: column;
+    float: left;
+}
+
+.pokemonListSelectionContainer {
+    background-image: url('../../../backgrounds/pokemon-stadium-bg.webp');
+    background-size: cover;
+    display: flex;
+}
+
+.divSection {
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    grid-template-rows: 1fr;
+    margin-top: 80px;
+}

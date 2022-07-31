@@ -1,0 +1,119 @@
+.card {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  border-radius: 500px;
+  text-align: center;
+  background-color: black;
+  color: white;
+  margin: 10px;
+  background-size: cover;
+  paddingtop: 10px;
+  font-family: "Courier New", Courier, monospace;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+p {
+  margin: 0 auto;
+  text-align: center;
+  width: fit-content;
+  background-color: black;
+}
+
+.pokeImage {
+  margin: 30px auto;
+}
+
+@keyframes pokeball {
+  25% {
+    border: 1px solid black;
+    border-left: 1px solid red;
+    border-right: 1px solid white;
+  }
+  50% {
+    border: 1px solid black;
+    border-bottom: 1px solid white;
+    border-top: 1px solid red;
+  }
+  75% {
+    border: 1px solid black;
+    border-left: 1px solid white;
+    border-right: 1px solid red;
+  }
+  100% {
+    border: 1px solid black;
+    border-bottom: 1px solid red;
+    border-top: 1px solid white;
+  }
+}
+
+.card:hover {
+  animation-duration: 0.25s;
+  animation-name: pokeball;
+  animation-iteration-count: infinite;
+}
+
+.bgWater {
+  background-image: url("/images/water-bg.jpeg");
+}
+
+.bgGrass {
+  background-image: url("/images/grass-bg.png");
+}
+
+.bgFire {
+  background-image: url("/images/volcano-bg.jpeg");
+}
+
+.bgInsect {
+  background-image: url("/images/insect-bg.png");
+}
+
+.bgNormal {
+  background-image: url("/images/normal-bg.jpg");
+}
+
+.bgFlying {
+  background-image: url("/images/sky-bg.jpeg");
+}
+
+.bgDragon {
+  background-image: url("/images/dragon-bg.jpeg");
+}
+
+.bgEletric {
+  background-image: url("/images/eletric-bg.png");
+}
+
+.bgFairy {
+  background-image: url("/images/fairy-bg.jpg");
+}
+
+.bgFight {
+  background-image: url("/images/fight-bg.jpg");
+}
+
+.bgGhost {
+  background-image: url("/images/ghost-bg.jpg");
+}
+
+.bgGround {
+  background-image: url("/images/ground-bg.jpg");
+}
+
+.bgIce {
+  background-image: url("/images/ice-bg.png");
+}
+
+.bgPsychic {
+  background-image: url("/images/psychic-bg.jpeg");
+}
+
+.bgRock {
+  background-image: url("/images/rock-bg.jpg");
+}
+
+.bgPoison {
+  background-image: url("/images/poison-bg.jpg");
+}

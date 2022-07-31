@@ -1,0 +1,29 @@
+.pokesquareContainer {
+    border: 1px solid black;
+    background-image: url('../../../backgrounds/pokeball-bg.webp');
+    background-size: cover;
+    padding: 5px;
+    width: 80px;
+    height: 80px;
+}
+
+.pokesquareImage {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    left: -3px;
+    top: -18px;
+}
+
+.removePoke {
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    position: relative;
+    top: -8px;
+    left: 70px;
+    cursor: pointer;
+    background-color: red;
+    border-radius: 50px;
+    padding: 8px;
+}

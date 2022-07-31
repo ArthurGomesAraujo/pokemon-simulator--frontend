@@ -1,9 +1,9 @@
-FROM node:buster
+FROM node:alpine
 
-COPY ./build /usr/src/pokemon-simulator/build
+COPY ./ /usr/src/pokemon-simulator/
 
 WORKDIR /usr/src/pokemon-simulator/
 
-RUN npm install -g serve
+RUN npm install
 
-ENTRYPOINT ["serve", "-s", "build"]
+ENTRYPOINT ["npm", "run", "start"]
