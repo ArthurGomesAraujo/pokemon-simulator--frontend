@@ -4,8 +4,7 @@ import PokemonCompEdit from "../../components/templates/PokemonCompEdit/PokemonC
 
 const CreatePokemonComp = (props) => {
   const [userPokeList, setUserPokeList] = useState([]);
-  const { backendURL, apiURL, pokemonList } = props;
-  const finalURL = `${backendURL}${apiURL}`;
+  const { pokemonList } = props;
 
   const addPokemonToSelection = (pokemon) => {
     if (userPokeList.length === 6) return;
@@ -36,7 +35,7 @@ const CreatePokemonComp = (props) => {
       return;
     }
 
-    fetch(finalURL, {
+    fetch("/api/pokemon", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -44,7 +43,7 @@ const CreatePokemonComp = (props) => {
       body: JSON.stringify({ pokemons: userPokeList }),
     })
       .then((response) => {
-        if (response.status === 201) return response.json();
+        if (response.status === 200) return response.json();
       })
       .then((data) =>
         alert("Composition saved successfully. Here's the ID: " + data.id)
@@ -71,8 +70,6 @@ export async function getStaticProps() {
 
   return {
     props: {
-      backendURL: process.env.BACKEND_URL,
-      apiURL: "/api/pokemon/team",
       pokemonList: resultFromAPI
     },
   };

@@ -1,15 +1,19 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
+import getConfig from 'next/config';
+
 import PokemonCompEdit from "../../components/templates/PokemonCompEdit/PokemonCompEdit";
 
 const UpdateCompById = (props) => {
   const router = useRouter();
 
   const compId = router.query.id;
-  const { backendURL, apiURL, pokemonList } = props;
+  const { publicRuntimeConfig } = getConfig();
+  const { pokemonBack } = publicRuntimeConfig;
+  const { pokemonList } = props;
   const [userPokeList, setUserPokeList] = useState([]);
-  const finalURL = `${backendURL}${apiURL}/${compId}`;
+  const finalURL = `${pokemonBack.url}${pokemonBack.api}/${compId}`;
 
   useEffect(() => {
     fetch(finalURL)

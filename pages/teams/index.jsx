@@ -3,13 +3,11 @@ import { useState, useEffect } from "react";
 import PokemonTeams from "../../components/templates/PokemonTeams/PokemonTeams";
 
 const PokemonTeamList = (props) => {
-  const [pokeTeams, setPokeTeams] = useState([]);
+  const [pokeTeams, setPokeTeams] = useState(props.userList);
   const [hasDeletion, setHasDeletion] = useState(false);
-  const { backendURL, apiURL } = props;
-  const finalURL = `${backendURL}${apiURL}`;
 
   useEffect(() => {
-    fetch(finalURL)
+    fetch("/api/pokemon")
       .then((response) => response.json())
       .then((data) => setPokeTeams(data))
       .catch((err) => console.log(err));
@@ -26,7 +24,7 @@ const PokemonTeamList = (props) => {
   }, [hasDeletion === true]);
 
   const onDeletePokemonTeam = (id) => {
-    fetch(`${finalURL}/${id}`, {
+    fetch("/api/pokemon", {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -47,14 +45,5 @@ const PokemonTeamList = (props) => {
     />
   );
 };
-
-export async function getStaticProps() {
-  return {
-    props: {
-      backendURL: process.env.BACKEND_URL,
-      apiURL: "/api/pokemon/team",
-    },
-  };
-}
 
 export default PokemonTeamList;
