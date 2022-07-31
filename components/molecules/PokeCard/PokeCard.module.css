@@ -8,13 +8,13 @@
   color: white;
   margin: 10px;
   background-size: cover;
-  paddingtop: 10px;
+  padding-top: 10px;
   font-family: "Courier New", Courier, monospace;
   border: 1px solid black;
   cursor: pointer;
 }
 
-p {
+.header {
   margin: 0 auto;
   text-align: center;
   width: fit-content;

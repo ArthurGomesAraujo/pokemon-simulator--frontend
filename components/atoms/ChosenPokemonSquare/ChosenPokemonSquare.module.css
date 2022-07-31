@@ -1,6 +1,6 @@
 .pokesquareContainer {
     border: 1px solid black;
-    background-image: url('../../../backgrounds/pokeball-bg.webp');
+    background-image: url('/images/pokeball-bg.webp');
     background-size: cover;
     padding: 5px;
     width: 80px;

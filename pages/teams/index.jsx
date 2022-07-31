@@ -1,17 +1,29 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-import PokemonTeams from "../../../pokemon-simulator-frontend-test/src/components/templates/PokemonTeams/PokemonTeams";
+import PokemonTeams from "../../components/templates/PokemonTeams/PokemonTeams";
 
 const PokemonTeamList = (props) => {
   const [pokeTeams, setPokeTeams] = useState([]);
+  const [hasDeletion, setHasDeletion] = useState(false);
   const { backendURL, apiURL } = props;
   const finalURL = `${backendURL}${apiURL}`;
 
   useEffect(() => {
     fetch(finalURL)
       .then((response) => response.json())
-      .then((data) => setPokeTeams);
-  }, [pokeTeams]);
+      .then((data) => setPokeTeams(data))
+      .catch((err) => console.log(err));
+  }, []);
+
+  useEffect(() => {
+    fetch(finalURL)
+      .then((response) => response.json())
+      .then((data) => {
+        setPokeTeams(data);
+        setHasDeletion(false);
+      })
+      .catch((err) => console.log(err));
+  }, [hasDeletion === true]);
 
   const onDeletePokemonTeam = (id) => {
     fetch(`${finalURL}/${id}`, {
@@ -19,11 +31,13 @@ const PokemonTeamList = (props) => {
       headers: {
         "Content-Type": "application/json",
       },
-    }).then((response) => {
-      if (response.status == 200) {
-        setPokemonTeams([]);
-      }
-    });
+    })
+      .then((response) => {
+        if (response.status == 200) {
+          setHasDeletion(true);
+        }
+      })
+      .catch((err) => console.log(err));
   };
 
   return (

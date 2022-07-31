@@ -1,26 +1,20 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
-import PokemonCompEdit from "../../../pokemon-simulator-frontend-test/src/components/templates/PokemonCompEdit/PokemonCompEdit";
+import PokemonCompEdit from "../../components/templates/PokemonCompEdit/PokemonCompEdit";
 
 const UpdateCompById = (props) => {
   const router = useRouter();
 
   const compId = router.query.id;
-  const { backendURL, apiURL } = props;
+  const { backendURL, apiURL, pokemonList } = props;
   const [userPokeList, setUserPokeList] = useState([]);
   const finalURL = `${backendURL}${apiURL}/${compId}`;
 
-  const pokeData = useRef(
-    setPokeData(JSON.parse(localStorage.getItem("pokemon-list")))
-  );
-  
   useEffect(() => {
-    console.log(finalURL);
-
     fetch(finalURL)
       .then((response) => response.json())
-      .then((data) => setUserPokeList(data), []);
+      .then((data) => setUserPokeList(data.pokemons), []);
   });
 
   const addPokemonToSelection = (pokemon) => {
@@ -75,17 +69,43 @@ const UpdateCompById = (props) => {
       submitComposition={submitComposition}
       addPokemonToSelection={addPokemonToSelection}
       userPokeList={userPokeList}
-      pokeData={pokeData}
+      pokeData={pokemonList}
     />
   );
 };
 
 export async function getStaticProps() {
+  const URL = "https://pokeapi.co/api/v2/pokemon?limit=151&offset=0";
+
+  const resultFromAPI = await fetch(URL)
+    .then((response) => response.json())
+    .then((data) => data.results);
+
   return {
     props: {
       backendURL: process.env.BACKEND_URL,
       apiURL: "/api/pokemon/team",
+      pokemonList: resultFromAPI,
     },
+  };
+}
+
+export async function getStaticPaths() {
+  const url = `${process.env.BACKEND_URL}/api/pokemon/team`;
+  const pokeData = await fetch(url)
+    .then((response) => response.json())
+    .then((data) => data.map((team) => team.id))
+    .catch((error) => console.log(error));
+
+  const pathsWithParams = pokeData.map((id) => ({
+    params: { id: id.toString() },
+  }));
+
+  console.log(pathsWithParams);
+
+  return {
+    paths: pathsWithParams,
+    fallback: "blocking",
   };
 }
 

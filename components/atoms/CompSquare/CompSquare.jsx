@@ -8,4 +8,6 @@ const CompSquare = ({ image }) => {
             <img src={image} alt="team-member" className={compsquareImage} />
         </div>
     )
-}
+};
+
+export default CompSquare;

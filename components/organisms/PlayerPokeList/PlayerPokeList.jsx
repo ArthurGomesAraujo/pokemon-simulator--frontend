@@ -1,6 +1,4 @@
-import { useEffect } from "react";
-
-import ChosenPokeSquare from "../../atoms/ChosenPokeSquare/ChosenPokeSquare";
+import ChosenPokemonSquare from '../../atoms/ChosenPokemonSquare/ChosenPokemonSquare';
 
 import classes from './PlayerPokeList.module.css';
 
@@ -11,7 +9,7 @@ const PlayerPokeList = ({ playerPokeListData, onRemoveFromList, onSubmitComp }) 
     <>
     <div className={playerPokeList}>
       {playerPokeListData.map((poke, index) => {
-        return <ChosenPokeSquare
+        return <ChosenPokemonSquare
           pokeImageURL={poke.image}
           onRemoveFromList={onRemoveFromList}
           playerListIndex={index}

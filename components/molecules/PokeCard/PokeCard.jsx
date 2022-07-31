@@ -38,7 +38,7 @@ const PokeCard = ({ pokemon, onSelectPokeToAdd }) => {
       case "FLYING":
         return classes.bgFlying;
       case "BUG":
-        return classes.bgBug;
+        return classes.bgInsect;
       case "PSYCHIC":
         return classes.bgPsychic;
       case "POISON":

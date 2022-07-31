@@ -8,8 +8,8 @@ const OptionsMenu = () => {
     return(
         <div className={pokedexBg}>
             <section className={buttonGroupMenu}>
-                <Link className={pokebutton} href="/teams">Check Teams</Link>
-                <Link className={pokebutton} href="/create">Create Teams</Link>
+                <button className={pokebutton}><Link href="/teams">Check Teams</Link></button>
+                <button className={pokebutton}><Link href="/create">Create Teams</Link></button>
             </section>
         </div>
     )

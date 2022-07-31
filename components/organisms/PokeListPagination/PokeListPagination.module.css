@@ -34,4 +34,7 @@
 .container {
     background-color: rgba(0, 0, 0, 0.625);
     border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
 }

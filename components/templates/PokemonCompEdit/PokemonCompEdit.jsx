@@ -1,12 +1,12 @@
-import NavBar from "../../../../pokemon-simulator-frontend-test/src/components/molecules/NavBar/NavBar";
-import PlayerPokeList from "../../../../pokemon-simulator-frontend-test/src/components/organisms/PlayerPokeList/PlayerPokeList";
-import PokeListPagination from "../../../../pokemon-simulator-frontend-test/src/components/organisms/PokeListPagination/PokeListPagination";
+import NavBar from "../../molecules/NavBar/NavBar";
+import PlayerPokeList from "../../organisms/PlayerPokeList/PlayerPokeList";
+import PokeListPagination from "../../organisms/PokeListPagination/PokeListPagination";
 
 import classes from "./PokemonCompEdit.module.css";
 
 const PokemonCompEdit = (props) => {
   const {
-    pokemonListSectionContainer,
+    pokemonListSelectionContainer,
     divSection,
     chosenPokemons,
     containerList,
@@ -21,7 +21,7 @@ const PokemonCompEdit = (props) => {
   } = props;
 
   return (
-    <div className={pokemonListSectionContainer}>
+    <div className={pokemonListSelectionContainer}>
       <NavBar />
       <div className={divSection}>
         <div className={chosenPokemons}>

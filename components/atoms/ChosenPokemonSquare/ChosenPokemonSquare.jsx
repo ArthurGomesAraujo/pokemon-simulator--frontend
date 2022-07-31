@@ -1,6 +1,6 @@
-import classes from "./ChosenPokeSquare.module.css";
+import classes from "./ChosenPokemonSquare.module.css";
 
-const ChosenPokeSquare = ({
+const ChosenPokemonSquare = ({
   pokeImageURL,
   playerListIndex,
   onRemoveFromList,
@@ -22,4 +22,4 @@ const ChosenPokeSquare = ({
   );
 };
 
-export default ChosenPokeSquare;
+export default ChosenPokemonSquare;

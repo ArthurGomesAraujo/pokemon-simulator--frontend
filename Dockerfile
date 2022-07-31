@@ -6,4 +6,4 @@ WORKDIR /usr/src/pokemon-simulator/
 
 RUN npm install
 
-ENTRYPOINT ["npm", "run", "start"]
+ENTRYPOINT ["npm", "run", "dev"]

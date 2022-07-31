@@ -1,5 +1,5 @@
-import PlayerCompsRegistered from "../../../../pokemon-simulator-frontend-test/src/components/organisms/PlayerCompsRegistered/PlayerCompsRegistered";
-import NavBar from "../../../../pokemon-simulator-frontend-test/src/components/molecules/NavBar/NavBar";
+import PlayerCompsRegistered from "../../organisms/PlayerCompsRegistered/PlayerCompsRegistered";
+import NavBar from "../../molecules/NavBar/NavBar";
 
 import classes from "./PokemonTeams.module.css";
 

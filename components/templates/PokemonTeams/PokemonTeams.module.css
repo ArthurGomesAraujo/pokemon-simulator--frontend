@@ -1,5 +1,5 @@
 .poketeamsContainer {
-    background-image: url('../../../backgrounds/pokecenter.jpeg');
+    background-image: url('/images/pokecenter.jpeg');
     background-size: cover;
     height: 100vh;
     text-align: center;
